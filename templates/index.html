@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+{% include "navbar.html" %}
+
+{% block styles %}
+{{super()}}
+    <link href="static/css/styles.css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-lg-6">
+                                {% if not current_user.is_authenticated: %}
+                                    <h1>Please Register or Login</h1>
+                                    {% else: %}
+                                    <h1 style="color:Tomato;">Welcome {{ current_user.name }}</h1>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    About Me
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+    <link href="static/css/styles.css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+    <div class="container">
+
+<img src="static/kontenimage/mycv.png" width="400" height="auto">
+        <h3 class="display-4"><a href={{filename}} download>Download CV</a></h3>
+        <a class="btn btn-warning" href="{{url_for('home')}}">HOME</a>
+    </div>
+</div>
+{% endblock %}

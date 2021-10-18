@@ -1,0 +1,49 @@
+{% extends 'bootstrap/base.html' %}
+{% block navbar %}
+    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="row">
+
+        {% if not current_user.is_authenticated: %}
+        <div class="col-4">
+            <a class="navbar-brand" href="{{url_for('home')}}">HOME</a>
+        </div>
+
+        <div class="col-8">
+            <a class="navbar-brand" href="{{url_for('register')}}">SIGN UP</a>
+        </div>
+
+        <div class="col-8">
+            <a class="navbar-brand" href="{{url_for('login')}}">SIGN IN</a>
+        </div>
+
+        {% else: %}
+        <div class="col-8">
+            <a class="navbar-brand" href="{{url_for('showdata')}}">SHOW DATA</a>
+        </div>
+
+        <div class="col-8">
+            <a class="navbar-brand" href="{{url_for('add')}}">ADD DATA</a>
+        </div>
+
+
+        <div class="col-8">
+            <a class="navbar-brand" href="{{url_for('logout')}}">LOG OUT</a>
+        </div>
+
+        {% endif %}
+
+
+
+    </div>
+
+    <span class="navbar-toggler-icon"></span>
+</nav>
+    </div>
+
+{% endblock %}
+
+{% block title %}
+PEOPLE DATA
+{% endblock %}

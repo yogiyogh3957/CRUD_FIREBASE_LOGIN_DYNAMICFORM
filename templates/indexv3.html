@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <head>
+  	<title>Sidebar 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="static/homepage/css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<h1><a href="index.html" class="logo">Me</a></h1>
+        <ul class="list-unstyled components mb-5">
+
+            {% if not current_user.is_authenticated: %}
+
+          <li>
+              <a href="{{url_for('register')}}"><span class="fa fa-user"></span> Register</a>
+          </li>
+
+          <li>
+            <a href="{{url_for('login')}}"><span class="fa fa-sticky-note"></span> Login</a>
+          </li>
+
+            {% else: %}
+
+          <li>
+            <a href="{{url_for('add')}}"><span class="fa fa-paper-plane"></span> Add Data</a>
+          </li>
+
+           <li>
+            <a href="{{url_for('logout')}}"><span class="fa fa-sticky-note"></span> Logout</a>
+          </li>
+            {% endif %}
+            <li>
+            <a href="{{url_for('showdata')}}"><span class="fa fa-cogs"></span> Show Data</a>
+          </li>
+
+            <li>
+            <a href="{{url_for('aboutme')}}"><span class="fa fa-address-book"></span> About Me</a>
+          </li>
+
+
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+
+          </div>
+        </nav>
+        <h1 class="mb-4" style="text-align:center;color:Tomato";> <b>MY PORTOPOLIO WEBSITE</b></h1>
+          </br>
+
+        <h2 class="mb-4">CRUD - DATABASES - FIREBASE - LOGIN HANDLING</h2>
+          <hr style="height:6px;border-width:0;color:black;background-color:gray">
+
+          <h2 style="color: #3e64ff">LOGIN HANDLING Feature</h2>
+          </br>
+          <p>You should register and then login with your account before using feature CRUD . You can use dummy email, no verification needed</p>
+            <div>
+
+              <img class="uploaded-image" src="static/kontenimage/reglogin.png" alt="GAMBAR" width="100" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/reg.png" alt="DATAINPUT" width="350" height="auto">
+                <img class="uploaded-image" src="static/kontenimage/login.png" alt="DATAINPUT" width="250" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/databaseusers.png" alt="DATAINPUT" width="350" height="auto">
+
+          </div>
+          </br>
+            </br>
+          <p>After Regist and Login you can use CRUD Features</p>
+            <i class="bi bi-arrow-right" style="color:red";>
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
+                </svg>
+            </i>
+          </br>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <h2 style="color: #3e64ff">CRUD Feature</h2>
+          <h3> ✅️ Create</h3>
+          </br>
+
+          <div>
+
+              <img class="uploaded-image" src="static/kontenimage/addicon.png" alt="GAMBAR" width="100" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/datainput.png" alt="DATAINPUT" width="350" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/database.png" alt="DATAINPUT" width="500" height="auto">
+
+          </div>
+
+            </br>
+
+          <h3> ✅️ Read</h3>
+          <p>Get Data From Database, and showing data into HTML (no lOGIN or REGISTER needed)</p>
+
+          <div>
+
+              <img class="uploaded-image" src="static/kontenimage/showdataicon.png" alt="GAMBAR" width="100" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/tableshowdata.png" alt="DATAINPUT" width="550" height="auto">
+
+          </div>
+            </br>
+            </br>
+          <h3> ✅️ Update and Delete</h3>
+          <p>Get Data From Database, and Delete/Update (Login and Admin Needed)</p>
+
+          <div>
+
+              <img class="uploaded-image" src="static/kontenimage/updel.png" alt="GAMBAR" width="150" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/updateform.png" alt="DATAINPUT" width="550" height="auto">
+
+          </div>
+            </br>
+          <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <h2 style="color: #3e64ff">Firebase Storage</h2>
+          <p>All image has been uploaded all stored in firebase, so in database we just have the url image</p>
+
+          <div>
+
+              <img class="uploaded-image" src="static/kontenimage/firebase.png" alt="GAMBAR" width="350" height="auto">
+                <i class="bi bi-arrow-right" style="color:Tomato";>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+                </i>
+              <img class="uploaded-image" src="static/kontenimage/dburl.png" alt="DATAINPUT" width="450" height="auto">
+
+          </div>
+
+      </div>
+		</div>
+
+    <script src="static/homepage/js/jquery.min.js"></script>
+    <script src="static/homepage/js/popper.js"></script>
+    <script src="static/homepage/js/bootstrap.min.js"></script>
+    <script src="static/homepage/js/main.js"></script>
+  </body>
+</html>

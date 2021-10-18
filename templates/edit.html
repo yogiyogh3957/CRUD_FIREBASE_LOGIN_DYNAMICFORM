@@ -1,0 +1,25 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+Data People
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h2>Edit Form</h2>
+
+    {% if edit %}
+          <td><img class="uploaded-image" src="{{data.image}}" alt="User Image" width="40" height="60"></td>
+            <p>current photos</p>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto content">
+    {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+      </div>
+        </div>
+            </div>
+
+{% endblock content %}

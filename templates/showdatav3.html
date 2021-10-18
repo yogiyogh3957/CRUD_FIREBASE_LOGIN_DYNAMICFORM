@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="static/table/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/table/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+		<th scope="col">ID</th>
+		<th scope="col">ADDED TIME</th>
+      <th scope="col">NAME</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">PHOTOS</th>
+      <th scope="col">ADDED BY</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for i in data %}
+    <tr>
+      <td>{{ i.id }}</td>
+		<td>{{ i.date }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.address }}</td>
+      <td><img class="uploaded-image" src="{{i.image}}" alt="User Image" width="40" height="60"></td>
+      <td>{{ i.inputer_name }}</td>
+      <td>
+        {% if current_user.id==1: %}
+        <a class="btn btn-danger" href="{{url_for('delete_post', data_id=i.id) }}">Delete</a>
+        <a class="btn btn-warning" href="{{url_for('edit_post', data_id=i.id) }}">Edit</a>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+				</div>
+			</div>
+			<div class="container homebuttonshowdata">
+			<a class="btn btn-warning" href="{{url_for('home')}}">HOME</a>
+		</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="static/table/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/table/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="static/addform/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/addform/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/addform/css/main.css">
+<!--===============================================================================================-->
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="POST" action="/register">
+				{{ form.csrf_token }}
+				<span class="contact100-form-title">
+					{% with messages = get_flashed_messages() %}
+							{% if messages %}
+							  <ul class=flashes>
+								{% for message in messages %}
+								  <p style="color:Tomato;">{{ message }}</p>
+								{% endfor %}
+							  </ul>
+							{% endif %}
+        				{% endwith %}
+					Register Account
+				</span>
+
+				<label class="label-input100">Name</label>
+				<div class="wrap-input100 validate-input" data-validate = "Enter name">
+					{{ form.name(class='input100', type='text', placeholder='Name') }}
+					<span class="focus-input100" data-placeholder="&#xf207;"></span>
+				</div>
+
+				<label class="label-input100">Email</label>
+				<div class="wrap-input100" data-validate = "Enter address">
+					{{ form.email(class='input100', type='text', placeholder='Email') }}
+					<span class="focus-input100"></span>
+				</div>
+
+                <label class="label-input100">Password</label>
+				<div class="wrap-input100" data-validate = "Enter address">
+					{{ form.password(class='input100', type='password', placeholder='Password') }}
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+
+							{{form.submit(class="contact100-form-btn")}}
+
+				</div>
+
+
+			</form>
+
+
+					<div class="text-center p-t-90">
+						<a class="btn btn-warning" href="{{url_for('home')}}">
+							HOME
+						</a>
+					</div>
+
+
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/addform/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/addform/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="static/addform/js/main.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+{% endblock content %}

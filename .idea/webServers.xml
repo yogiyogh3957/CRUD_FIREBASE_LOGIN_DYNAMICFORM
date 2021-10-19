@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b0966c3b-b0fb-45e5-8f00-dc35f841fc8c" name="portofolio website">
+        <fileTransfer rootFolder="/home/yogiyogh/Down_Up_File_Firebase" accessType="SFTP" host="172.104.34.112" port="22" sshConfigId="6112419a-db74-40fa-a981-fc0f5cb97690" sshConfig="yogiyogh@172.104.34.112:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

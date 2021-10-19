@@ -183,7 +183,6 @@ def home():
     return render_template("indexv3.html", current_user=current_user)
 
 @app.route('/add', methods=["GET", "POST"])
-@admin_only
 def add():
     print(current_user.id)
     form = DataForm()

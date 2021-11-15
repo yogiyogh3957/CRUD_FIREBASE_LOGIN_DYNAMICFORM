@@ -42,13 +42,16 @@
   <tbody>
 
     {% for i in data %}
+
     <tr>
       <td>{{ i.id }}</td>
 		<td>{{ i.date }}</td>
       <td>{{ i.name }}</td>
       <td>{{ i.address }}</td>
       <td><img class="uploaded-image" src="{{i.image}}" alt="User Image" width="40" height="60"></td>
-      <td>{{ i.inputer_name }}</td>
+			{% for x in user_name_list %}
+      		<td>{{ x }}</td>
+			{% endfor %}
       <td>
         {% if current_user.id==1: %}
         <a class="btn btn-danger" href="{{url_for('delete_post', data_id=i.id) }}">Delete</a>
@@ -56,6 +59,7 @@
         {% endif %}
       </td>
     </tr>
+
     {% endfor %}
 
   </tbody>

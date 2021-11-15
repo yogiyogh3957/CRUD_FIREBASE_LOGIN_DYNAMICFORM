@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 from flask_wtf.csrf import CSRFProtect
+
 import datetime
 timezone_diff = datetime.timedelta(hours = 7)
 GMT_timezone = datetime.timezone(timezone_diff)
@@ -75,7 +76,7 @@ class Data_db(db.Model):
     image = db.Column(db.Text, nullable=False)
     date = db.Column(db.Text, nullable=False)
 
-    inputer_name = db.Column(db.Text, db.ForeignKey("users.name"))
+    inputer_name = db.Column(db.Text, db.ForeignKey("users.id"))
     inputer = relationship("User_db", back_populates="people_data")
 
 class User_db(UserMixin, db.Model):
@@ -268,9 +269,12 @@ def edit_post(data_id):
 
 @app.route('/showdata', methods=["GET", "POST"])
 def showdata():
+    user_name_list = []
     data = Data_db.query.all()
+    for x in data :
+        user_name_list.append(User_db.query.get(x.inputer_name).name)
 
-    return render_template("showdatav3.html", data=data)
+    return render_template("showdatav3.html", data=data, user_name_list=user_name_list)
 
 @app.route('/delete/<int:data_id>')
 @admin_only
